@@ -1,0 +1,14 @@
+.cont{
+    height: 40rem;
+    border: 2px solid green;
+    display: flex;
+    flex-direction:row-reverse;
+    background-color: blue;
+}
+div{
+    background-color: aqua;
+    width: 10rem;
+    height: 5rem;
+    margin: 5px;
+    text-align: center;
+}
