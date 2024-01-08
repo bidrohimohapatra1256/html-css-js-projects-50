@@ -1,6 +1,12 @@
 html,body{
     height: 100%;
     width: 100%;
+
+}
+body{
+    padding: 30px;
+background-color: black;
+    perspective: 800px;
 }
 h1{
     font-size: 50px;
@@ -11,4 +17,11 @@ h1{
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    
+}
+
+img{
+ height: 500px;
+ width: 500px;
+ transform: rotate3d(1, 1, 1, 178deg);
 }
