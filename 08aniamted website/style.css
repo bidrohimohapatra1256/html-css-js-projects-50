@@ -13,6 +13,7 @@ html,body{
     width: 100%;
     background-color:hsla(0, 0%, 5%, 0.783);
     display: flex;
+    overflow: hidden;
 }
 #part1{
     height: 100%;
@@ -22,7 +23,7 @@ html,body{
 #part2{
     height: 100%;
     width: 68%;
-    background-color: rgb(40, 51, 211);
+    background-color: rgb(65, 66, 76);
     background-image: url(https://images.unsplash.com/photo-1653227203074-ea5ac3ed9476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
     background-position: center;
@@ -30,10 +31,68 @@ html,body{
 #overlay{
     height: 100%;
     width:100% ;
-    background-color:hsla(344, 18%, 70%, 0.267) ;
+    background-color:hsla(344, 18%, 70%, 0.192) ;
 }
 #part3{
     height: 100%;
     width: 7%;
     /*background-color: rgb(6, 240, 244);*/
 }
+#text-div{
+    /*height: 300px;*/
+    position: absolute;
+    width: 800px;
+    /* background-color: red; */
+    left: 8%;
+    top: 30%;
+    
+}
+#text-div>h1{
+    font-size: 80px;
+    font-family: gilroy;
+    text-transform: uppercase;
+      line-height: 80px;
+    font-weight: 900;
+    color: white;
+    letter-spacing:4px;
+}
+#small-img{
+    height: 400px;
+    width: 300px;
+    /*background-color: red;*/
+    background-image: url(https://images.unsplash.com/photo-1605367811611-f6011b264cb5?q=80&w=1968&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+#overlayr{
+    height: 100%;
+    width:100% ;
+    background-color:hsla(340, 16%, 41%, 0.422) ;
+}
+#vertical-text{
+    position: absolute;
+   /* width: 100%;*/
+   transform:rotate(90deg) ;
+   right: -50%;
+   transform-origin:0% 0% ;
+   
+   top: 2%;
+    
+}
+#vertical-text h1{
+    font-size:60px ;
+    font-weight: 800;
+    letter-spacing:12px ;
+    color: transparent;
+    font-family: monument;
+    text-transform: uppercase;
+    -webkit-text-stroke-width:2px ;
+    -webkit-text-stroke-color:white;
+
+}
+
