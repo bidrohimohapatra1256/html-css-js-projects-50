@@ -1,19 +1,37 @@
-const monthEl = document.getElementById("month");
-const dayNameEl = document.getElementById("day");
-const dayNumEl = document.getElementById("day-number");
-const yearEl = document.getElementById("year");
+let form = document.querySelector("form");
+let input = document.querySelector("input");
+let todos = document.querySelector(".todos");
 
-const date = new Date();
+function getTodo(value) {
+  // Creating New Elements
+  let todo = document.createElement("div");
+  let textEl = document.createElement("span");
 
-const month = date.getMonth();
+  // Setting values & Styles
+  textEl.innerHTML = value;
 
-monthEl.innerHTML = date.toLocaleDateString("en", {
-  month: "long",
+  // Appending Our Element To The DOM
+  todo.appendChild(textEl);
+
+  let closeEl = document.createElement("span");
+  closeEl.innerHTML = "&times;";
+  closeEl.classList.add("delete");
+
+  // Attaching Events
+  closeEl.addEventListener("click", function (e) {
+    todos.removeChild(todo);
+  });
+
+  todo.appendChild(closeEl);
+  todo.classList.add("todo");
+  return todo;
+}
+
+form.addEventListener("submit", (e) => {
+  // preventing the default behavior
+  e.preventDefault();
+  let value = input.value;
+  if (!value.trim()) return;
+  todos.appendChild(getTodo(value));
+  input.value = "";
 });
-
-dayNameEl.innerHTML = date.toLocaleDateString("en", {
-  weekday: "long",
-});
-
-dayNumEl.innerHTML = date.getDate();
-yearEl.innerHTML = date.getFullYear();
