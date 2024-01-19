@@ -1,37 +1,51 @@
-let form = document.querySelector("form");
-let input = document.querySelector("input");
-let todos = document.querySelector(".todos");
+// 1. Create a Set name (letters)
+// 2. Add ("a", "b", "c") as properties
+// 3. Add ("a", "b", "c") as values
+// 4. Iterate over Set & log the values.
 
-function getTodo(value) {
-  // Creating New Elements
-  let todo = document.createElement("div");
-  let textEl = document.createElement("span");
+// -------------------------------
+// Create a Set
+const letters = new Set();
 
-  // Setting values & Styles
-  textEl.innerHTML = value;
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
 
-  // Appending Our Element To The DOM
-  todo.appendChild(textEl);
+// Create Variables
+const a = "a";
+const b = "b";
+const c = "c";
 
-  let closeEl = document.createElement("span");
-  closeEl.innerHTML = "&times;";
-  closeEl.classList.add("delete");
-
-  // Attaching Events
-  closeEl.addEventListener("click", function (e) {
-    todos.removeChild(todo);
-  });
-
-  todo.appendChild(closeEl);
-  todo.classList.add("todo");
-  return todo;
+for (let value of letters) {
+  console.log(value);
 }
 
-form.addEventListener("submit", (e) => {
-  // preventing the default behavior
-  e.preventDefault();
-  let value = input.value;
-  if (!value.trim()) return;
-  todos.appendChild(getTodo(value));
-  input.value = "";
-});
+// --------- TOTALLY OPTIONAL & ALSO REQUIRES THE KNOWLEDGE OF REGEX
+// Write a function called (getUniqueLetters) that takes a string as input and returns a Set containing all the unique letters (case-insensitive) present in the string.
+
+// output should look something like this 👇
+// const text = "Hello World";
+
+// const uniqueLettersSet = getUniqueLetters(text);
+// console.log(uniqueLettersSet);
+// OUTPUT 👉 Set(7) { 'h', 'e', 'l', 'o', ' ', 'w', 'r' }
+
+// ************* SOLUTION
+
+function getUniqueLetters(str) {
+  const uniqueLetters = new Set();
+  const lowercaseStr = str.toLowerCase();
+
+  for (const char of lowercaseStr) {
+    if (/[a-z]/i.test(char)) {
+      uniqueLetters.add(char);
+    }
+  }
+
+  return uniqueLetters;
+}
+
+const text = "Hello World";
+const uniqueLettersSet = getUniqueLetters(text);
+console.log(uniqueLettersSet);
