@@ -1,51 +1,25 @@
-// 1. Create a Set name (letters)
-// 2. Add ("a", "b", "c") as properties
-// 3. Add ("a", "b", "c") as values
-// 4. Iterate over Set & log the values.
+// The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
-// -------------------------------
-// Create a Set
-const letters = new Set();
+let numbers = [1, 2, 3, 4, 5];
 
-// Add Values to the Set
-letters.add("a");
-letters.add("b");
-letters.add("c");
+// So here what's going on, each number in the numbers array is being passed
+// --> Into anonymous function that we're passing in,
+// --> Whatever this function returns is placed into a new array,
+// --> After each elements has being processed that new array is return.
+let double = numbers.map((num) => num * 2);
+console.log(double);
+// -----------------
 
-// Create Variables
-const a = "a";
-const b = "b";
-const c = "c";
+// -----------------
+let peoples = [
+  { firstName: "Macom", lastName: "Reynolds" },
+  { firstName: "Kaylee", lastName: "Frye" },
+  { firstName: "Jayne", lastName: "Cobb" },
+];
 
-for (let value of letters) {
-  console.log(value);
-}
+const results = peoples.map((person) => {
+  return [person.firstName, person.lastName];
+});
 
-// --------- TOTALLY OPTIONAL & ALSO REQUIRES THE KNOWLEDGE OF REGEX
-// Write a function called (getUniqueLetters) that takes a string as input and returns a Set containing all the unique letters (case-insensitive) present in the string.
-
-// output should look something like this 👇
-// const text = "Hello World";
-
-// const uniqueLettersSet = getUniqueLetters(text);
-// console.log(uniqueLettersSet);
-// OUTPUT 👉 Set(7) { 'h', 'e', 'l', 'o', ' ', 'w', 'r' }
-
-// ************* SOLUTION
-
-function getUniqueLetters(str) {
-  const uniqueLetters = new Set();
-  const lowercaseStr = str.toLowerCase();
-
-  for (const char of lowercaseStr) {
-    if (/[a-z]/i.test(char)) {
-      uniqueLetters.add(char);
-    }
-  }
-
-  return uniqueLetters;
-}
-
-const text = "Hello World";
-const uniqueLettersSet = getUniqueLetters(text);
-console.log(uniqueLettersSet);
+console.log(results);
+// -----------------
