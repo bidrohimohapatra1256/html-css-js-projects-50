@@ -40,3 +40,14 @@ img{
 #one{
     width: 50%;
 }
+.text{
+    width: 400px;;
+    height: 100px;
+    bottom: 15%;
+    left: -10%;
+    z-index: 999;
+    
+}
+.text h1{
+    position:absolute;
+}
