@@ -19,12 +19,14 @@ html,body{
     justify-content: center;
 }
 #center{
+    overflow: hidden;
     position: relative;
     width: 80%;
     height: 80%;
     background-color: #fa0707;
 }
 .imagecontainer{
+    overflow: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -34,4 +36,7 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+#one{
+    width: 50%;
 }
